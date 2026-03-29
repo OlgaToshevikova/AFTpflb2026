@@ -134,26 +134,103 @@ public class Bankomat {
             System.out.println("Не можем выдать нужную сумму, т.к в банкомате нет требуемой суммы");
             System.out.println("result равен "+result);
         }
+        System.out.println("ИДЕМ СМОТРЕТЬ ДЕСЯТКИ!");
 
-        if (rest/50==1){
+        System.out.println("Остаток в десятках равен "+rest);
+
+        if (rest==60||rest==80){
+            System.out.println("Зашли в  if (rest==60||rest==80)");
+            int twentyCount= rest/20;
+            System.out.println("Количество двадцаток, чтобы выдать всю сумму "+twentyCount);
+            if (twenty>=twentyCount){
+                tempTwenty=+twentyCount;
+                System.out.println("Количество двадцаток до выдачи суммы "+twenty);
+                twenty=twenty-twentyCount;
+                System.out.println("Количество двадцаток после выдачи суммы "+twenty);
+                rest=rest-twentyCount*20;
+                if (rest==0){
+                    result=true;
+                    System.out.println("result равен " +result);
+                    System.out.println("Остаток суммы выдан двадцатками в количестве равном "+twentyCount+" Остаток суммы равен "+rest);
+                    totalSum=twenty*20+fifty*50+hundred*100;
+                    System.out.println("Баланс банкомата равен "+totalSum+" По купюрам двадцатки= "+twenty+"пятидесятки ="+fifty+"сотки ="+hundred);
+
+                }
+            }else {
+                System.out.println("Нет достаточного количества двадцаток");
+                result=false;
+                System.out.println("result равен "+result);
+
+            }
+        }else {
+            System.out.println("Нет нужного количества двадцаток");
+            result=false;
+            System.out.println("result равен "+result);
+        }
+
+
+
+
+        System.out.println("Сумма остатка в десятках равна "+rest);
+        if (rest/50==1&&rest!=60&&rest!=80){
+            System.out.println("Зашли в иф rest/50==1");
             if (fifty>=1){
                 tempFifty++;
-                fifty=-1;
+                fifty=fifty-1;
                 rest=rest-50;
+                System.out.println("Количество пятидесяток равно "+fifty+"Остаток суммы равен "+rest);
                     if(rest==0){
                         result=true;
+                        System.out.println("result равен "+result);
                         System.out.println("Выдана пятидесятка в рамках десятков. Остаток суммы равен "+rest);
+                        totalSum=twenty*20+fifty*50+hundred*100;
+                        System.out.println("Баланс банкомата равен "+totalSum+" По купюрам двадцатки- "+twenty+"пятидесятки -"+fifty+"сотки -"+hundred);
+                    }else {
+                        if (rest%20==0){
+                            int twentyCount= rest/20;
+                            System.out.println("Остаток после 50 кратен 20 и равен "+twentyCount);
+                            if (twenty>=twentyCount){
+                                tempTwenty=+twentyCount;
+                                System.out.println("Количество двадцаток до выдачи хвостика "+twenty);
+                                twenty=twenty-twentyCount;
+                                System.out.println("Количество двадцаток после выдачи хвостика "+twenty);
+                                rest=rest-twentyCount*20;
+                                if (rest==0){
+                                    result=true;
+                                    System.out.println("result равен " +result);
+                                    System.out.println("Остаток суммы выдан двадцатками в количестве равном "+twentyCount+" Остаток суммы равен "+rest);
+                                    totalSum=twenty*20+fifty*50+hundred*100;
+                                    System.out.println("Баланс банкомата равен "+totalSum+" По купюрам двадцатки= "+twenty+"пятидесятки ="+fifty+"сотки ="+hundred);
+                                }
+                            }else {
+                                System.out.println("Нет достаточного количества двадцаток");
+                                result=false;
+                                System.out.println("result равен "+result);
+
+                            }
+                        }else {
+                            System.out.println("Нет пятидесяток, а двадцатками выдать не можем");
+                            result=false;
+                            System.out.println("result равен "+result);
+                        }
+
                     }
+
+
             }else {
-                if (rest%20==0){
+                if (rest%20==0 && rest!=60 && rest!=80){
                    int twentyCount= rest/20;
+                    System.out.println("Остаток после 50 кратен 20 и равен "+twentyCount);
                       if (twenty>=twentyCount){
                           tempTwenty=+twentyCount;
                           twenty=-twentyCount;
                           rest=-twentyCount*20;
                                 if (rest==0){
                                     result=true;
+
                                     System.out.println("Остаток суммы выдан двадцатками в количестве равном "+twentyCount+"Остаток суммы равен "+rest);
+                                    totalSum=twenty*20+fifty*50+hundred*100;
+                                    System.out.println("Баланс банкомата равен "+totalSum+" По купюрам двадцатки = "+twenty+" пятидесятки ="+fifty+" сотки ="+hundred);
                                 }
                       }else {
                           System.out.println("Нет достаточного количества двадцаток");
@@ -169,14 +246,18 @@ public class Bankomat {
             }
         }else {
             if (rest%20==0){
+                System.out.println("Зашли в иф rest%20==0");
                 int twentyCount= rest/20;
                 if (twenty>=twentyCount){
-                    tempTwenty=+twentyCount;
-                    twenty=-twentyCount;
-                    rest=-twentyCount*20;
+                    tempTwenty=tempTwenty+twentyCount;
+                    twenty=twenty-twentyCount;
+                    rest=rest-twentyCount*20;
                     if (rest==0){
                         result=true;
+                        System.out.println("result равен "+result);
                         System.out.println("Остаток суммы выдан двадцатками в количестве равном "+twentyCount+"Остаток суммы равен "+rest);
+                        totalSum=twenty*20+fifty*50+hundred*100;
+                        System.out.println("Баланс банкомата равен "+totalSum+" По купюрам двадцатки= "+twenty+" пятидесятки = "+fifty+" сотки = "+hundred);
                     }
                 }else {
                     System.out.println("Нет достаточного количества двадцаток(Остаток был меньше 50)");
