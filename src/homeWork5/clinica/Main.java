@@ -1,4 +1,4 @@
-package homeWork5.task_clinica;
+package homeWork5.clinica;
 
 public class Main {
     public static void main(String[] args) {

@@ -1,4 +1,5 @@
-package homeWork5.task_clinica;
+package homeWork5.clinica;
+
 /*
 Задача 1:
 Создать программу для имитации работы клиники. Пусть в клинике будет три
