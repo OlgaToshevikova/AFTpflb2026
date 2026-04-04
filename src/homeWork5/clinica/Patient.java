@@ -3,21 +3,21 @@ package homeWork5.clinica;
 public class Patient {
     String name;
     int curePlan;
-    String doctor;
+    Doctor doctor;
     String state;
-
-    public Patient(String name, int curePlan, String doctor, String state) {
+    public Patient(String name, int curePlan, Doctor doctor, String state) {
         this.name = name;
         this.curePlan = curePlan;
         this.doctor = doctor;
         this.state = state;
     }
-
-    public void setCurePlan(Patient patient,int curePlan) {
+    public void setCurePlan(int curePlan) {
         this.curePlan = curePlan;
     }
-
-    public void setDoctor(String doctor) {
+    public void setDoctor(Doctor doctor) {
         this.doctor = doctor;
+    }
+    public Doctor getDoctor() {
+        return doctor;
     }
 }

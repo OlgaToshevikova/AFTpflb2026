@@ -15,12 +15,12 @@ public class Triangle extends Form {
     int height;
 
     @Override
-    public int getArea() {
-        return (sideA / 2) * height;
+    public double getArea() {
+        return sideA * height / 2.0;
     }
 
     @Override
-    public int getPerimeter() {
+    public double getPerimeter() {
         return sideA + sideB + sideC;
     }
 }

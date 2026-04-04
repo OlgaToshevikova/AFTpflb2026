@@ -1,8 +1,8 @@
 package homeWork5.forms;
 
 public class Rectangle extends Form {
-    int sideA;
-    int sideB;
+    double sideA;
+    double sideB;
 
     public Rectangle(int sideA, int sideB) {
         this.sideA = sideA;
@@ -10,12 +10,12 @@ public class Rectangle extends Form {
     }
 
     @Override
-    public int getArea() {
+    public double getArea() {
         return sideA * sideB;
     }
 
     @Override
-    public int getPerimeter() {
+    public double getPerimeter() {
         return (sideA + sideB) * 2;
     }
 }

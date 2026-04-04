@@ -8,12 +8,12 @@ public class Circle extends Form {
     }
 
     @Override
-    public int getArea() {
+    public double getArea() {
         return (int) (Math.PI * radius * radius);
     }
 
     @Override
-    public int getPerimeter() {
+    public double getPerimeter() {
         return (int) Math.PI * 2 * radius;
     }
 }

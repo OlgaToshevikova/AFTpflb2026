@@ -9,7 +9,7 @@ public class Main {
         System.out.println("Периметр круга равен " + circle.getPerimeter());
         System.out.println("Периметр треугольника равен " + triangle.getPerimeter());
         Form[] forms = new Form[]{rectangle, circle, triangle, circle, triangle};
-        int sum = 0;
+        double sum = 0;
         for (int i = 0; i <= 4; i++) {
             sum = sum + forms[i].getPerimeter();
             System.out.println("Периметр " + forms[i] + " равен " + sum);

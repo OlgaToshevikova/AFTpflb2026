@@ -15,12 +15,7 @@ package homeWork5.clinica;
 выполнить метод
 лечить.
  */
-public class Doctor {
-    String type;
-    public Doctor(String type) {
-        this.type = type;
-    }
-    public void heal(Patient patient) {
-        System.out.println("Лечит");
-    }
+public abstract class Doctor {
+
+    public abstract void heal(Patient patient);
 }

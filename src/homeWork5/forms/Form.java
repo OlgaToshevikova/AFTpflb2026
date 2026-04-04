@@ -9,7 +9,7 @@ package homeWork5.forms;
  */
 
 public abstract class Form {
-    public abstract int getArea();
+    public abstract double getArea();
 
-    public abstract int getPerimeter();
+    public abstract double getPerimeter();
 }
