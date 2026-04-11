@@ -9,11 +9,9 @@ package homeWork8.task2;
 класса.
  */
 
-import java.util.ArrayList;
 import java.util.LinkedList;
-import java.util.List;
 
-public class Animal {
+public class AnimalsSet {
     LinkedList<String> animals = new LinkedList<>();
 
     public void addAnimal(String animal) {
